@@ -1,2 +1,2 @@
-require "omniauth-github/version"
-require 'omniauth/strategies/github'
+require 'omniauth-radius/version'
+require 'omniauth/strategies/radius'
