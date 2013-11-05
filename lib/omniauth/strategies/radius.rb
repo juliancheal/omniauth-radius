@@ -4,9 +4,9 @@ module OmniAuth
     class Radius < OmniAuth::Strategies::OAuth2
 
       option :client_options, {
-        :site => "https://account.messageradius.com",
-        :authorize_url => "https://account.messageradius.com/auth/radius/authorize",
-        :access_token_url => "https://account.messageradius.com/auth/radius/access_token"
+        :site => "https://account.radiusnetworks.com",
+        :authorize_url => "https://account.radiusnetworks.com/auth/radius/authorize",
+        :access_token_url => "https://account.radiusnetworks.com/auth/radius/access_token"
       }
 
       uid { raw_info['id'] }
