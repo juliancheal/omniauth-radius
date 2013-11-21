@@ -3,10 +3,14 @@ module OmniAuth
   module Strategies
     class Radius < OmniAuth::Strategies::OAuth2
 
+      def self.provider_url
+        ENV['RADIUS_OAUTH_PROVIDER_URL'] || "https://account.radiusnetworks.com"
+      end
+
       option :client_options, {
-        :site => "https://account.radiusnetworks.com",
-        :authorize_url => "https://account.radiusnetworks.com/auth/radius/authorize",
-        :access_token_url => "https://account.radiusnetworks.com/auth/radius/access_token"
+        :site => provider_url,
+        :authorize_url => "#{provider_url}/auth/radius/authorize",
+        :access_token_url => "#{provider_url}/auth/radius/access_token"
       }
 
       uid { raw_info['id'] }
