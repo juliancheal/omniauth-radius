@@ -1,4 +1,11 @@
 require 'omniauth-oauth2'
+
+begin
+  require 'dotenv'
+  Dotenv.load
+rescue LoadError
+end
+
 module OmniAuth
   module Strategies
     class Radius < OmniAuth::Strategies::OAuth2
